@@ -1,0 +1,30 @@
+-
+	list = [
+		{
+			title: 'Более 10 вариантов расцветки лент',
+			descr: 'Ленты из плотной атласной (сатиновой) ткани смотрятся ярко и празднично. Ширина ленты 10 см, длина — 190 см.',
+		},
+		{
+			title: 'Печать фольгой',
+			descr: 'В наличии золотая, серебряная, черная, белая, красная и голографическая фольга.',
+		},
+		{
+			title: 'Полная персонализация',
+			descr: 'Печатаем ленты с именами учеников, номером учебного заведения, номером класса. Также можно добавить герб своего города, эмблему из нашей коллекции, или свой собственный дизайн на выбор.',
+		},
+	]
+
+section.section.about_prod
+	.section_in.about_prod__in
+		ul.about_prod__list
+			each item, index in list
+				li.about_prod__item.js-fade-el
+					.about_prod__col.about_prod__col--info_mod
+						.about_prod__info
+							.about_prod__info_in
+								h2.about_prod__title= item.title
+								.about_prod__descr= item.descr
+
+					.about_prod__col.about_prod__col--img_mod
+						.about_prod__img_w
+							img(src=`images/about-prod-${index}.jpg`, alt="some image")

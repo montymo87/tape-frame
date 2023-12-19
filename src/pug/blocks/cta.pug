@@ -1,0 +1,40 @@
+-
+	list = [
+		{
+			title: 'Конкурсы красоты',
+			icon: 'crown-small'
+		},
+		{
+			title: 'Свадьбы',
+			icon: 'rings'
+		},
+		{
+			title: 'Дни рождения',
+			icon: 'confetti'
+		},
+		{
+			title: '...и многое другое',
+		},
+	]
+
+section.section.cta.js-fade-el
+	.section_in.cta__in
+		.cta__row
+			.cta__col.cta__col--info_mod
+				.cta__info
+					.cta__title Изготовим индивидуальные ленты для любого события
+					.cta__list_w
+						ul.cta__list
+							each item in list
+								li.cta__item
+									if item.icon
+										.cta__icon
+											+icon(item.icon, 'icon--size_mod')
+									.cta__item_title= item.title
+
+					.cta__btn_w
+						a(href="#").js-popup-contact-trigger.cta__btn Заказать индивидуальную ленту
+
+			.cta__col.cta__col--img_mod
+				.cta__img_w
+					img(src="images/cta.png", alt="some image")

@@ -1,2 +1,43 @@
 mixin footer
 	footer.footer
+		.footer__in
+			.footer__row
+
+				a(href="#").footer__logo_w
+					.footer__logo_title выпуск лент
+					//- img(src="images/logo.png", alt="")
+
+				a(href="#").footer__phone
+					span.footer__icon
+						+icon('phone', 'icon--size_mod')
+					span.footer__phone_title +7 (903) 425-80-43
+
+				.footer__btn
+					a(href="#").btn_1.js-popup-contact-trigger Заказать звонок
+
+			.footer__row
+				.footer__col
+					.footer__top_social_w
+						a(href="#" aria-lebel="social").footer__social
+							+icon('whatsapp', 'icon--size_mod')
+
+						a(href="#" aria-lebel="social").footer__social
+							+icon('telegram', 'icon--size_mod')
+
+					ul.footer__contact_list
+						li.footer__contact_item
+							a(href="#").footer__contact_link
+								span.footer__contact_icon
+									+icon('mark', 'icon--size_mod')
+								span.footer__contact_title г. Краснодар, ул. Зиповская 5В, литер "С"
+						li.footer__contact_item
+							a(href="#").footer__contact_link
+								span.footer__contact_icon
+									+icon('mail', 'icon--size_mod')
+								span.footer__contact_title ajk_net@mail.ru
+
+				.footer__col
+					a(href="#").footer__link © Все права защищены, 2022
+					a(href="#").footer__link.footer__link--policy_mod Политика конфиденциальности
+					a(href="#").footer__link.footer__link--arkada_mod
+						img(src="images/arkada.png", alt="logo")

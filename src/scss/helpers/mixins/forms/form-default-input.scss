@@ -12,7 +12,7 @@
 	height: $input_height;
 	padding: $input_offset;
 	font-size: $input_font_size;
-	font-family: $font_1;
+	font-variant-numeric: lining-nums proportional-nums;
 	color: $input_text_color;
 	caret-color: $input_text_color;
 	box-shadow: inset 0 0 0 1px $input_border_color;
@@ -22,6 +22,10 @@
 
 	transition: box-shadow 0.3s ease 0s;
 	will-change: box-shadow;
+
+	.construct_form_item &:not(.form_textarea__element) {
+		height: 7.2rem;
+	}
 
 	&:hover,
 	&:focus {
@@ -49,7 +53,6 @@
 	}
 
 	&[type='search'] {
-
 		// HIDE CLEAR ICON
 		&::-ms-clear,
 		&::-ms-reveal {
@@ -66,7 +69,6 @@
 	}
 
 	&[type='date'] {
-
 		// HIDE CALENDAR ICON
 		&::-webkit-calendar-picker-indicator {
 			opacity: 0;
@@ -74,7 +76,6 @@
 	}
 
 	@at-root {
-
 		// CLEAR DEFAULT SAFARI BG
 		select#{&} {
 			-webkit-tap-highlight-color: transparent;
@@ -82,4 +83,24 @@
 	}
 
 	@include appearance(none);
+
+	&.wpcf7-form-control {
+		&.wpcf7-not-valid {
+			box-shadow: inset 0 0 0 1px $red;
+		}
+	}
+}
+
+.wpcf7-form-control-wrap {
+	.wpcf7-not-valid-tip {
+		display: none !important;
+	}
+}
+
+.wpcf7-response-output {
+	display: none !important;
+}
+
+.wpcf7-spinner {
+	display: none !important;
 }

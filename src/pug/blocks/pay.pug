@@ -1,0 +1,70 @@
+-
+	list = [
+		{
+			title: 'Переводом на карту',
+			descr: 'Принимает переводы на карты банков:',
+			img_list: [
+				'images/pay/bank-1.png',
+				'images/pay/bank-2.png',
+				'images/pay/bank-3.png',
+			]
+		},
+		{
+			title: 'по qr-коду',
+			descr: 'Lorem ipsum dolor sit amet consectetur. Velit sed vitae turpis tellus elementum a scelerisque aliquam pretium.'
+		},
+		{
+			title: 'На расчетный счет',
+			descr: 'Lorem ipsum dolor sit amet consectetur. Velit sed vitae turpis tellus elementum a scelerisque aliquam pretium.'
+		},
+	]
+
+section.section.pay
+	.section_in.pay__in
+		.pay__heading.js-fade-el
+			.pay__icon
+				+icon('payment', 'icon--size_mod')
+			.pay__title Оплатите как вам удобно
+
+		.pay__descr.js-fade-el Оплата производится после создания заказа, когда менеджер свяжется с вами и обсудит все детали и условия доставки.
+
+		.pay__list_w
+			ul.pay__list
+				each item in list
+					li.pay__item.js-fade-el
+						.pay__item_in
+							h3.pay__item_title= item.title
+							.pay__item_descr= item.descr
+							if item.img_list
+								.pay__item_img_list
+									each subitem in item.img_list
+										.pay__item_img_w
+											img(src=subitem, alt="logo bank")
+
+		.pay__row
+			.pay__col.pay__col--info_mod.js-fade-el
+				h4.pay__form_title Чтобы сделать заказ оставьте заявку:
+				.pay__form_descr Отправляя заявку вы соглашаетесь на обработку своих персональных данных и принимаете Политику конфиденциальности.
+			.pay__col.pay__col--form_mod.js-fade-el
+				.pay__form_w
+					form(action="#")
+						.pay__form_in
+							.pay__form_item
+								+form_input({
+									type: 'text',
+									placeholder: 'Ваше имя',
+									value: '',
+									id: 'input_1',
+								})
+							.pay__form_item
+								+form_input({
+									type: 'tel',
+									placeholder: 'Ваш номер телефона',
+									value: '',
+									id: 'input_2',
+									class: 'form_input__element js-mask-phone'
+								})
+
+							.pay__form_item
+								button(type="submit").btn_2.pay__form_btn Заказать звонок
+

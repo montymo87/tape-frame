@@ -1,0 +1,37 @@
+.page__info {
+	@include flex_block(column, wrap, center, center, center);
+
+	text-align: center;
+}
+
+.page__title {
+	font-size: 20vw;
+	font-weight: 900;
+	color: $blue;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 10rem;
+	}
+}
+
+.page__subtitle {
+	font-size: 3.4rem;
+	font-weight: 600;
+	color: $blue;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.page__descr {
+	font-size: 2.4rem;
+
+	a {
+		color: $blue;
+	}
+}

@@ -1,3 +1,14 @@
-// .btn_base {
+.btn_1 {
+	@include btn_style_1;
+	@include btn_size_1;
+}
 
-// }
+.btn_2 {
+	@include btn_style_2;
+	@include btn_size_2;
+}
+
+.btn_3 {
+	@include btn_style_3;
+	@include btn_size_2;
+}

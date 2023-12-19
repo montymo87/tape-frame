@@ -1,0 +1,233 @@
+.construct {
+	@include bp($point_3) {
+		padding: var(--gl-vr-indent) 1rem;
+	}
+}
+
+.construct__w {
+	background-color: #f4f4f4;
+
+	@include bp($point_2, min) {
+		padding: 7rem;
+		border-radius: 2rem;
+	}
+	@include bp($point_3) {
+		padding: 3rem;
+		border-radius: 1rem;
+	}
+	@include bp($point_4) {
+		padding: 3rem 1rem;
+	}
+}
+
+.construct__images_w {
+	position: relative;
+
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-bottom: 44%;
+	background-color: $white;
+	overflow: hidden;
+
+	&:not(:last-child) {
+		margin-bottom: 0.5rem;
+	}
+
+	img {
+		@include cover_img;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.construct__info_msg {
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 1.15;
+	color: #a8a8a8;
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 5rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.construct__img_w {
+	display: block;
+
+	img {
+		transform: scale(1.2);
+	}
+}
+
+.construct__img_print {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	transform: scale(1.2);
+
+	svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+.construct__img_symbol {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	transform: scale(1.2);
+
+	&.construct__color--white {
+		color: gold;
+	}
+
+	svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.construct__form {
+	@include flex_block(row, wrap, flex-start);
+
+	@include bp($point_2, min) {
+		margin: 0 -5rem -3rem 0;
+	}
+	@include bp($point_3) {
+		margin: 0 -2rem -2rem 0;
+	}
+}
+
+.construct__form_col {
+	@include bp($point_2, min) {
+		padding: 0 5rem 3rem 0;
+		width: 50%;
+	}
+	@include bp($point_3) {
+		padding: 0 2rem 2rem 0;
+		width: 100%;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 3rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.construct_form_item {
+	width: 100%;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 3rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.construct_form_btn {
+	width: 100%;
+	height: 7.2rem;
+	line-height: 7.2rem;
+}
+
+.construct__select_list_w {
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 5rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.construct__select_list {
+	@include flex_block(row, wrap, flex-start);
+
+	@include bp($point_4, min) {
+		margin: 0 -5rem -3rem 0;
+	}
+	@include bp($point_4 - 1) {
+		margin: 0 -2rem -2rem 0;
+	}
+}
+
+.construct__select_tape_box {
+	width: 100%;
+
+	@include bp($point_4, min) {
+		padding: 0 5rem 3rem 0;
+	}
+	@include bp($point_4 - 1) {
+		padding: 0 2rem 2rem 0;
+	}
+
+	@include bp($point_2, min) {
+		max-width: 40rem;
+	}
+}
+
+.construct__select_w {
+	@include bp($point_4, min) {
+		padding: 0 5rem 3rem 0;
+	}
+	@include bp($point_4 - 1) {
+		padding: 0 2rem 2rem 0;
+	}
+
+	&.construct__select_w--design_mod {
+		max-width: 40rem;
+		width: 100%;
+		padding: 0;
+	}
+
+	&.construct__select_w--symbol_mod {
+		width: 100%;
+
+		@include bp($point_4, min) {
+			max-width: 16rem;
+		}
+		@include bp($point_4 - 1) {
+			max-width: 14rem;
+		}
+	}
+
+	&.construct__select_w--color_mod {
+		width: 100%;
+
+		@include bp($point_4, min) {
+			max-width: 16rem;
+		}
+		@include bp($point_4 - 1) {
+			max-width: 11rem;
+		}
+	}
+}
+
+.search_bar__select_color {
+	width: 100%;
+	height: 100%;
+}
+
+.construct_form_item--hidden {
+	display: none;
+	visibility: hidden;
+}

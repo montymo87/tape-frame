@@ -1,0 +1,157 @@
+.cta {
+	color: $gray;
+}
+
+.cta__row {
+	@include flex_block(row, wrap, flex-start, stretch);
+
+	background-color: $blue_2;
+	border-radius: 2rem;
+	overflow: hidden;
+}
+
+.cta__col {
+	&.cta__col--info_mod {
+		@include flex_block(row, wrap, flex-start, center, center);
+
+		@include bp($point_2, min) {
+			padding: 7rem 3rem 7rem 10rem;
+		}
+		@include bp($point_3) {
+			padding: 4rem 2rem;
+		}
+	}
+
+	&.cta__col--img_mod {
+		@include bp($point_3) {
+			display: none;
+		}
+	}
+
+	@include bp($point_2, min) {
+		width: 50%;
+	}
+	@include bp($point_3) {
+		width: 100%;
+	}
+}
+
+.cta__info {
+	max-width: 49rem;
+	width: 100%;
+
+	@include bp($point_3) {
+		margin: 0 auto;
+	}
+}
+
+.cta__title {
+	font-size: 4rem;
+	line-height: 1.1;
+	font-weight: 700;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 4rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		font-size: 4rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 3.4rem;
+		text-align: center;
+	}
+}
+
+.cta__list_w {
+	@include bp($point_2, min) {
+		margin-bottom: 7rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 4rem;
+	}
+}
+
+.cta__list {
+	margin: 0 -2.8rem -2rem 0;
+
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start);
+	}
+	@include bp($point_3) {
+		@include flex_block(row, wrap, center);
+	}
+}
+
+.cta__item {
+	@include flex_block(row, nowrap, flex-start, center, center);
+
+	padding: 0 2.8rem 2rem 0;
+}
+
+.cta__icon {
+	flex: none;
+	width: 3rem;
+	height: 3rem;
+	margin-right: 1rem;
+}
+
+.cta__item_title {
+	@include text;
+	font-weight: 800;
+
+	.cta__item:last-child & {
+		font-weight: 600;
+	}
+}
+
+.cta__img_w {
+	width: 100%;
+	height: 100%;
+
+	img {
+		@include cover_img;
+		object-position: left;
+	}
+}
+
+.cta__btn_w {
+	@include bp($point_3) {
+		@include flex_block(row, wrap, center, center, center);
+	}
+}
+
+.cta__btn {
+	@include flex_block(row, wrap, center, center, center);
+
+	min-height: 7.2rem;
+	padding: 2rem;
+	color: $white;
+	border-radius: 1rem;
+	text-align: center;
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+
+	transition: all ease 0.3s;
+	background-color: #4b9fec;
+	box-shadow: inset 0px 0px 0px 2px rgba($gray, 0);
+
+	&:hover {
+		background-color: transparent;
+		box-shadow: inset 0px 0px 0px 2px rgba($gray, 1);
+		text-decoration: none;
+	}
+}

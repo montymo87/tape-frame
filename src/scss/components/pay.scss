@@ -1,0 +1,211 @@
+.pay__heading {
+	@include flex_block(row, nowrap, flex-start);
+
+	@include bp($point_2, min) {
+		margin-bottom: 5rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
+}
+
+.pay__icon {
+	flex: none;
+	position: relative;
+	top: -0.6rem;
+	width: 4rem;
+	height: 4rem;
+
+	margin-right: 1.4rem;
+}
+
+.pay__title {
+	@include h2;
+	line-height: 1.1;
+
+	span {
+		font-weight: 700;
+		font-size: 2rem;
+		line-height: 1.15;
+		color: #a8a8a8;
+
+		&:before {
+			position: relative;
+			display: inline-block;
+			margin: 0.5rem 1rem;
+			width: 2.5rem;
+			height: 1px;
+			content: '';
+			background-color: #a8a8a8;
+		}
+	}
+}
+
+.pay__descr {
+	@include text;
+	font-weight: 600;
+
+	@include bp($point_2, min) {
+		margin-bottom: 5rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
+}
+
+.pay__list_w {
+	@include bp($point_2, min) {
+		margin-bottom: 5rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
+}
+
+.pay__list {
+	margin: 0 -3rem -3rem 0;
+	counter-reset: items;
+
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, stretch, stretch);
+	}
+}
+
+.pay__item {
+	padding: 0 3rem 3rem 0;
+
+	@include bp($point_2, min) {
+		width: calc(100% / 3);
+	}
+	@include bp($point_3) {
+		width: 100%;
+	}
+}
+
+.pay__item_in {
+	position: relative;
+	padding: 3rem 3rem 3rem 9rem;
+	height: 100%;
+	background-color: $gray;
+	border-radius: 1rem;
+
+	&:after {
+		@include flex_block(row, wrap, center, center, center);
+		position: absolute;
+		top: 2.5rem;
+		left: 3rem;
+
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background-color: $red;
+		color: $gray;
+		font-variant-numeric: lining-nums proportional-nums;
+
+		counter-increment: items;
+		content: counter(items);
+
+		font-size: 2rem;
+
+		font-weight: 800;
+	}
+}
+
+.pay__item_title {
+	font-size: 2rem;
+	font-weight: 800;
+	text-transform: uppercase;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.pay__item_descr {
+	font-size: 2rem;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.pay__item_img_list {
+	@include flex_block(row, wrap, flex-start);
+
+	margin: 0 -2rem -2rem 0;
+}
+
+.pay__item_img_w {
+	max-height: 5.3rem;
+
+	padding: 0 2rem 2rem 0;
+}
+
+.pay__row {
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, center, center);
+	}
+	@include bp($point_3) {
+	}
+}
+
+.pay__col {
+	&.pay__col--form_mod {
+		@include bp($point_2, min) {
+			width: 55%;
+		}
+		@include bp($point_3) {
+			width: 100%;
+		}
+	}
+
+	&.pay__col--info_mod {
+		padding-right: 3rem;
+		@include bp($point_2, min) {
+			width: 45%;
+		}
+		@include bp($point_3) {
+			width: 100%;
+		}
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.pay__form_title {
+	@include text;
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.pay__form_descr {
+	@include text;
+}
+
+.pay__form_in {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	margin: 0 -1.5rem -1.5rem 0;
+}
+
+.pay__form_item {
+	padding: 0 1.5rem 1.5rem 0;
+
+	@include bp($point_2, min) {
+		width: 23rem;
+	}
+	@include bp($point_3) {
+		width: 100%;
+	}
+}
+.pay__form_btn {
+	height: 6.3rem;
+	line-height: 6.3rem;
+}

@@ -1,0 +1,168 @@
+.review {
+	background-color: $gray;
+	position: relative;
+	padding-bottom: 10rem;
+}
+
+.review__in {
+	position: relative;
+}
+
+.review__heading {
+	@include flex_block(row, wrap, flex-start);
+
+	@include bp($point_2, min) {
+		margin-bottom: 6rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
+}
+
+.review__icon {
+	flex: none;
+	position: relative;
+
+	width: 4rem;
+	height: 4rem;
+
+	margin-right: 1.4rem;
+
+	@include bp($point_2, min) {
+		top: 0;
+	}
+	@include bp($point_3) {
+		top: -0.8rem;
+	}
+}
+
+.review__title {
+	@include h2;
+	line-height: 1.1;
+}
+
+.review__slider {
+	margin-bottom: 5rem;
+}
+
+.review__slide_item {
+	max-width: 109.5rem;
+	width: 100%;
+
+	&:nth-child(even) {
+		flex-direction: row-reverse;
+		margin-left: auto;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 5rem;
+	}
+
+	@include bp($point_4, min) {
+		@include flex_block(row, nowrap, flex-start);
+	}
+}
+
+.review__slide_avatar {
+	flex: none;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	overflow: hidden;
+
+	img {
+		@include cover_img;
+	}
+
+	.review__slide_item:nth-child(even) & {
+		@include bp($point_4, min) {
+			margin-right: 0;
+			margin-left: 2rem;
+		}
+	}
+
+	@include bp($point_4, min) {
+		margin-right: 2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		margin-bottom: 2rem;
+	}
+}
+
+.review__slide_info {
+	background-color: $white;
+
+	@include bp($point_4, min) {
+		@include flex_block(row, nowrap, flex-start);
+		padding: 4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		@include flex_block(row, wrap, flex-start);
+		padding: 2rem;
+	}
+}
+
+.review__slide_title {
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
+	color: $black_2;
+	font-weight: 600;
+}
+
+.review__slide_descr {
+	font-size: 1.6rem;
+	color: $black_2;
+	font-weight: 400;
+}
+
+.review__slide_img {
+	flex: none;
+	width: 13rem;
+	height: 13rem;
+
+	img {
+		@include cover_img;
+	}
+
+	@include bp($point_4, min) {
+		margin-left: 4rem;
+	}
+	@include bp($point_4 - 1) {
+		margin-top: 2rem;
+	}
+}
+
+.review__slider__dots {
+	@include flex_block(row, wrap, center, center, center);
+	counter-reset: section;
+}
+
+.swiper-pagination-bullet {
+	@include flex_block(row, wrap, center, center, center);
+	position: relative;
+	z-index: 10;
+
+	width: 4rem;
+	height: 4rem;
+	border-radius: 1rem;
+
+	font-size: 2rem;
+	cursor: pointer;
+
+	font-weight: 600;
+	transition: color ease 0.3s, background-color ease 0.3s;
+
+	&:after {
+		display: block;
+		counter-increment: section;
+		content: counter(section);
+		font-variant-numeric: lining-nums proportional-nums;
+	}
+
+	&.swiper-pagination-bullet-active {
+		background-color: $red;
+		color: $white;
+	}
+}

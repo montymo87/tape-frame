@@ -1,0 +1,12 @@
+section.section.grid()
+	.section_in.grid__in
+		.grid__list_w
+			ul.grid__list
+				+loop_while(9)
+					li.grid__list_item.js-fade-el
+						a(href="#" data-fancybox="gallery" data-src=`images/grid/grid-${i - 1}.jpg`).js-grid-gallery.grid__list_link
+							.grid__list_img_icon
+								+icon("zoom", 'icon--size_mod')
+							.grid__list_img_w
+								img(src=`images/grid/grid-${i - 1}.jpg`, alt="some image")
+

@@ -1,0 +1,30 @@
+-
+	list = [
+		{
+			descr: 'выпускники 9 и 11 классов',
+			icon: 'school',
+		},
+		{
+			descr: 'выпускники детского сада и начальной школы',
+			icon: 'school-2',
+		},
+		{
+			descr: 'ленты первоклассников',
+			icon: 'bell',
+		},
+		{
+			descr: 'индивидуальные ленты',
+			icon: 'crown',
+		},
+	]
+
+section.section.about
+	.section_in.about__in.js-fade-el
+		.about__list_w
+			ul.about__list
+				each item in list
+					li.about__item
+						.about__item_in
+							.about__item_icon
+								+icon(item.icon, 'icon--size_mod')
+							.about__item_descr= item.descr

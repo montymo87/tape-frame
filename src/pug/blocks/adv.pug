@@ -1,0 +1,30 @@
+-
+	list = [
+		{
+			title: 'Доставка по всей России',
+			descr: 'Доставляем курьерской службой СДЭК и почтой России, выбираем самый быстрый и дешевый способ доставки. Ориентируемся на ваше желание.',
+			img: 'images/advantages/0.png'
+		},
+		{
+			title: 'Срок изготовления 1-2 дня',
+			descr: 'Без учета очереди и сроков доставки.',
+			img: 'images/advantages/1.png'
+		},
+		{
+			title: 'На разных языках',
+			descr: 'Для жителей республик напечатаем ленты на родном языке.',
+			img: 'images/advantages/2.png'
+		},
+	]
+
+section.section.adv
+	.section_in.adv__in
+
+		ul.adv__list
+			each item in list
+				li.adv__item.js-fade-el
+					.adv__img_w
+						img(src=item.img, alt="some image")
+
+					h3.adv__title= item.title
+					.adv__descr= item.descr

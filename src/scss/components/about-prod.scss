@@ -1,0 +1,146 @@
+.about_prod__item {
+	&:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+
+	&:not(:first-child):nth-child(even) {
+		@include bp($point_2, min) {
+			margin-top: -8rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, stretch);
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.about_prod__col {
+	&.about_prod__col--info_mod {
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	&.about_prod__col--img_mod {
+		.about_prod__item:nth-child(even) & {
+			position: relative;
+			z-index: 1;
+		}
+
+		@include bp($point_2, min) {
+			padding: 0 3rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		width: 50%;
+	}
+	@include bp($point_3) {
+		width: 100%;
+	}
+}
+
+.about_prod__info {
+	.about_prod__item:not(:last-child):nth-child(odd) & {
+		@include bp($point_2, min) {
+			padding: 3rem 0 12rem;
+		}
+	}
+
+	.about_prod__item:nth-child(even) & {
+		@include bp($point_2, min) {
+			text-align: right;
+			padding: 12rem 0 3rem;
+		}
+	}
+}
+
+.about_prod__info_in {
+	position: relative;
+
+	@include bp($point_2, min) {
+		padding: 6rem;
+	}
+	@include bp($point_3) {
+		padding: 3rem 2rem;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+
+		height: 100%;
+		content: '';
+		background-color: $gray;
+		border-radius: 1rem;
+
+		.about_prod__item:nth-child(even) & {
+			right: 0;
+			left: auto;
+		}
+
+		@include bp($point_2, min) {
+			width: 200%;
+		}
+		@include bp($point_3) {
+			width: 100%;
+		}
+	}
+}
+
+.about_prod__title {
+	@include h3;
+
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
+	@include bp($point_3) {
+		text-align: center;
+	}
+}
+
+.about_prod__descr {
+	@include text;
+	position: relative;
+
+	@include bp($point_3) {
+		text-align: center;
+	}
+}
+
+.about_prod__img_w {
+	position: relative;
+	width: 100%;
+
+	border-radius: 1rem;
+	overflow: hidden;
+
+	@include bp($point_2, min) {
+		padding-bottom: 67%;
+	}
+	@include bp($point_3, $point_4) {
+		padding-bottom: 50%;
+	}
+	@include bp($point_4 - 1) {
+		padding-bottom: 67%;
+	}
+
+	img {
+		@include cover_img;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

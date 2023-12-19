@@ -1,0 +1,121 @@
+-
+	tapes = [
+		'баклажан',
+		'белый',
+		'бордовый',
+		'голубой',
+		'зеленый',
+		'золото',
+		'изумрудный',
+		'красный',
+		'кремовый',
+		'маджента',
+		'мятный',
+		'розовый',
+		'серебрянный',
+		'синий',
+		'темно-синий',
+		'фиолетовый',
+		'флаг',
+	]
+
+section.section.construct
+	.section_in.construct__in
+		.pay__heading.js-fade-el
+			.pay__icon
+				+icon('bookmark', 'icon--size_mod')
+			h2.pay__title Конструктор лент
+				span соберите свой уникальный дизайн
+		.construct__w
+			.construct__images_w
+				div.construct__img_w
+					img(src="", alt="картинка ленты")
+
+				canvas.construct__img_print
+
+				canvas.construct__img_symbol
+
+			.construct__info_msg *Конструктор использует новейшие технологии, и если лента не отображается корректно, пожалуйста, обновите браузер до последней версии
+			.construct__select_list_w
+				.construct__select_list.js-select-wrapper
+					.construct__select_w.construct__select_w--design_mod
+						h3.construct__select_title Дизайн:
+						select(id="select-filter-1").construct__select.js-select-filter-design
+							+loop_while(16)
+								option(value=`images/print/${i}.png` data-design=`images/print/${i}.png` data-name=`design-${i}`)
+					.construct__select_w.construct__select_w--symbol_mod
+						h3.construct__select_title Эмблема:
+						select(id="select-filter-2" placeholder="" autocomplete="off").construct__select.js-select-filter-symbol
+							+loop_while(59)
+								option(value=`images/symbol/${i}.png` data-symbol=`images/symbol/${i}.png` data-name=`symbol-${i}`)
+
+					.construct__select_w.construct__select_w--color_mod.construct__select_w--print_mod
+						h3.construct__select_title Цвет ленты:
+						select(id="select-filter-3" placeholder="" autocomplete="off").construct__select.js-select-filter-print
+							+loop_while(17)
+								option(value=`images/construct/${tapes[i - 1]}.jpg` data-tape=`images/construct/${tapes[i - 1]}.jpg` data-title=`tape-${i}`)
+
+					.construct__select_w.construct__select_w--color_mod
+						h3.construct__select_title Цвет печати:
+						select(id="select-filter-4" placeholder="" autocomplete="off" data-color='' data-name=`color-${i}`).construct__select.js-select-filter-color
+							option(value=`#000000` data-color="#000000")
+							option(value=`#f14635` data-color="#f14635")
+							option(value=`#acd33f` data-color="#acd33f")
+							option(value=`#e5b530` data-color="#e5b530")
+
+			.construct__form_w
+				form(action="#")
+					.construct_form_item.construct_form_item--hidden
+						+form_input({
+							type: 'text',
+							id: 'tape_design'
+						})
+						+form_input({
+							type: 'text',
+							id: 'tape_symbol'
+						})
+						+form_input({
+							type: 'text',
+							id: 'tape_tape'
+						})
+						+form_input({
+							type: 'text',
+							id: 'tape_color'
+						})
+					.construct__form
+						.construct__form_col
+							.construct_form_item
+								+form_input({
+									placeholder: 'Имя',
+									type: 'text',
+									id: 'con_place'
+								})
+
+							.construct_form_item
+								+form_textarea({
+									placeholder: 'Имя',
+									id: 'con_area'
+								})
+
+						.construct__form_col
+							.construct_form_item
+								+form_input({
+									placeholder: 'Имя',
+									type: 'text',
+									id: 'con_name'
+								})
+
+							.construct_form_item
+								+form_input({
+									placeholder: 'Номер телефона',
+									type: 'text',
+									class: 'form_input__element js-mask-phone',
+									id: 'con_phone'
+								})
+
+							.construct_form_item
+								.construct_form_btn_w
+									button(type="submit").btn_1.construct_form_btn Оформить заказ
+
+
+

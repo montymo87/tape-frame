@@ -1,2 +1,77 @@
+-
+	list = [
+		{
+			title: 'Галерея работ',
+			icon: 'camera'
+		},
+		{
+			title: 'Преимущества',
+			icon: 'star'
+		},
+		{
+			title: 'Об оплате',
+			icon: 'payment'
+		},
+		{
+			title: 'Отзывы',
+			icon: 'chat'
+		},
+	]
+
 mixin header
 	header.header
+		.header__in
+			.header__row.header__row--top_mod
+				a(href="#").header__logo_w
+					.header__logo_title выпуск лент
+					//- img(src="images/logo.png", alt="")
+
+
+				.header__menu
+					.header__nav_w
+
+						.header__top_link.header__top_link--shop_mod
+							a(href="#").header__link
+								span.header__icon
+									+icon('store', 'icon--size_mod')
+								span.header__link_title Магазин аксессуаров
+						nav.header__nav.header__nav--mobile_mod
+							ul.header__nav_list
+								each item in list
+									li.header__nav_item
+										a(href="#").header__link
+											span.header__icon
+												+icon(item.icon, 'icon--size_mod')
+											span.header__link_title= item.title
+
+						.header__top_link.header__top_link--phone_mod
+							a(href="#").header__link
+								span.header__icon
+									+icon('phone', 'icon--size_mod')
+								span.header__link_title +7 (903) 425-80-43
+
+						.header__top_link
+							a(href="#").btn_1.js-popup-contact-trigger Заказать звонок
+
+						.header__top_social_w
+							a(href="#" aria-lebel="social").header__social
+								+icon('whatsapp', 'icon--size_mod')
+
+							a(href="#" aria-lebel="social").header__social
+								+icon('telegram', 'icon--size_mod')
+
+				button.header__menu_trigger.js-header-menu-trigger(type="button" aria-label="Toggle menu")
+					span
+
+			.header__row.header__row--bot_mod
+				.header__nav_w
+					nav.header__nav
+						ul.header__nav_list
+							each item in list
+								li.header__nav_item
+									a(href="#").header__link
+										span.header__icon
+											+icon(item.icon, 'icon--size_mod')
+										span.header__link_title= item.title
+
+
